@@ -355,38 +355,53 @@
           </div>
 
          <div class="form-container" style="background-color: #000; color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); max-width: 600px; margin: auto;" data-aos="fade-up" data-aos-delay="100">
-  <form id="contactForm" action="https://formsubmit.co/muditcodes@gmail.com" method="POST">
-    <h3 style="text-align: center; color: #fff; margin-bottom: 20px;">Contact Me</h3>
-    <div class="form-row" style="display: flex; justify-content: space-between; gap: 10px;">
-      <div class="form-group" style="flex: 1;">
-        <label for="name" style="color: #fff;">Your Name</label>
-        <input type="text" name="name" class="form-control" id="name" style="background-color: #222; color: #fff; border: 1px solid #555; border-radius: 5px; padding: 10px;" required />
-      </div>
-      <div class="form-group" style="flex: 1;">
-        <label for="email" style="color: #fff;">Your Email</label>
-        <input type="email" class="form-control" name="email" id="email" style="background-color: #222; color: #fff; border: 1px solid #555; border-radius: 5px; padding: 10px;" required />
-      </div>
-    </div>
-    <div class="form-group" style="margin-top: 15px;">
-      <label for="subject" style="color: #fff;">Subject</label>
-      <input type="text" class="form-control" name="subject" id="subject" style="background-color: #222; color: #fff; border: 1px solid #555; border-radius: 5px; padding: 10px;" required />
-    </div>
-    <div class="form-group" style="margin-top: 15px;">
-      <label for="message" style="color: #fff;">Message</label>
-      <textarea class="form-control" name="message" id="message" rows="5" style="background-color: #222; color: #fff; border: 1px solid #555; border-radius: 5px; padding: 10px;" required></textarea>
-    </div>
-    <div class="mb-3" style="margin-top: 15px;">
-      <div id="statusMessage" style="color: #0f0; font-weight: bold; display: none;">Message Sent Successfully!</div>
-    </div>
-    <div class="text-center" style="margin-top: 20px;">
-      <button type="submit" style="background-color: #555; color: #fff; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s;">Send Message</button>
-    </div>
-    
-    <!-- Hidden Inputs for FormSubmit -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://mudit-code.github.io">
-  </form>
-</div>
+            <form id="contactForm" action="https://formsubmit.co/muditcodes@gmail.com" method="POST" onsubmit="showStatusMessage(event)">
+              <h3 style="text-align: center; color: #fff; margin-bottom: 20px;">Contact Me</h3>
+              <div class="form-row" style="display: flex; justify-content: space-between; gap: 10px;">
+                <div class="form-group" style="flex: 1;">
+                  <label for="name" style="color: #fff;">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" style="background-color: #222; color: #fff; border: 1px solid #555; border-radius: 5px; padding: 10px;" required />
+                </div>
+                <div class="form-group" style="flex: 1;">
+                  <label for="email" style="color: #fff;">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" style="background-color: #222; color: #fff; border: 1px solid #555; border-radius: 5px; padding: 10px;" required />
+                </div>
+              </div>
+              <div class="form-group" style="margin-top: 15px;">
+                <label for="subject" style="color: #fff;">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" style="background-color: #222; color: #fff; border: 1px solid #555; border-radius: 5px; padding: 10px;" required />
+              </div>
+              <div class="form-group" style="margin-top: 15px;">
+                <label for="message" style="color: #fff;">Message</label>
+                <textarea class="form-control" name="message" id="message" rows="5" style="background-color: #222; color: #fff; border: 1px solid #555; border-radius: 5px; padding: 10px;" required></textarea>
+              </div>
+              <div class="mb-3" style="margin-top: 15px;">
+                <div id="statusMessage" style="color: #0f0; font-weight: bold; display: none;">Message Sent Successfully!</div>
+              </div>
+              <div class="text-center" style="margin-top: 20px;">
+                <button type="submit" style="background-color: #555; color: #fff; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s;">Send Message</button>
+              </div>
+              
+              <!-- Hidden Inputs for FormSubmit -->
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="thanku.html">
+            </form>
+          </div>
+          
+          <script>
+            function showStatusMessage(event) {
+              // Prevent default form submission behavior
+              event.preventDefault();
+          
+              // Display the status message
+              document.getElementById('statusMessage').style.display = 'block';
+          
+              // Allow the form to submit after showing the message
+              setTimeout(() => {
+                event.target.submit();
+              }, 2000); // Adjust delay if needed
+            }
+          </script>
 
           
       </div>
